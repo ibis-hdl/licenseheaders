@@ -59,11 +59,25 @@ def update_c_style_comments(extensions):
         "headerLineSuffix": None,
     }
 
+def update_cpp_style_comments(extensions):
+    return {
+        "extensions": extensions,
+        "keepFirst": None,
+        "blockCommentStartPattern": re.compile(r'^\s*//'),
+        "blockCommentEndPattern": re.compile(r'//\s*$'),
+        "lineCommentStartPattern": re.compile(r'^\s*//'),
+        "lineCommentEndPattern": None,
+        "headerStartLine": "//\n",
+        "headerEndLine": "//\n\n",
+        "headerLinePrefix": "// ",
+        "headerLineSuffix": None,
+    }
+
 # for each processing type, the detailed settings of how to process files of that type
 TYPE_SETTINGS = {
     # All the languages with C style comments:
     "c": update_c_style_comments([".c", ".cc", ".h"]),
-    "cpp": update_c_style_comments([".cpp", ".hpp", ".cxx", ".hxx", ".ixx"]),
+    "cpp": update_cpp_style_comments([".cpp", ".hpp", ".cxx", ".hxx", ".ixx"]),
     "csharp": update_c_style_comments([".cs", ".csx"]),
     "d": update_c_style_comments([".d"]),
     "go": update_c_style_comments([".go"]),
