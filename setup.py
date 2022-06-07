@@ -33,7 +33,7 @@ setup(
     python_requires=">=3.5",
     license="MIT",
     keywords="",
-    url="http://github.com/johann-petrak/licenseheaders",
+    url="https://github.com/ibis-hdl/licenseheaders",
     py_modules=['licenseheaders'],
     # packages=["licenseheaders"],
     # package_dir={"licenseheaders":"licenseheaders"},
